@@ -1,0 +1,30 @@
+[2021-11-04 20:25:25,585] {models.py:1593} INFO - Executing <Task(StageToRedshiftOperator): Stage_songs> on 2019-01-13T01:00:00+00:00
+[2021-11-04 20:25:25,585] {base_task_runner.py:118} INFO - Running: ['bash', '-c', 'airflow run udac_example_dag Stage_songs 2019-01-13T01:00:00+00:00 --job_id 82 --raw -sd DAGS_FOLDER/udac_example_dag.py --cfg_path /tmp/tmpytequy8h']
+[2021-11-04 20:25:33,598] {base_task_runner.py:101} INFO - Job 82: Subtask Stage_songs [2021-11-04 20:25:33,574] {settings.py:174} INFO - settings.configure_orm(): Using pool settings. pool_size=5, pool_recycle=1800, pid=4425
+[2021-11-04 20:25:42,699] {base_task_runner.py:101} INFO - Job 82: Subtask Stage_songs [2021-11-04 20:25:42,698] {__init__.py:51} INFO - Using executor LocalExecutor
+[2021-11-04 20:25:47,359] {base_task_runner.py:101} INFO - Job 82: Subtask Stage_songs [2021-11-04 20:25:47,358] {models.py:273} INFO - Filling up the DagBag from /home/workspace/airflow/dags/udac_example_dag.py
+[2021-11-04 20:25:47,933] {base_task_runner.py:101} INFO - Job 82: Subtask Stage_songs [2021-11-04 20:25:47,864] {cli.py:520} INFO - Running <TaskInstance: udac_example_dag.Stage_songs 2019-01-13T01:00:00+00:00 [running]> on host e2da55b55578
+[2021-11-04 20:25:48,422] {stage_redshift.py:36} INFO - StageToRedshiftOperator not implemented yet
+[2021-11-04 20:25:48,422] {models.py:1788} ERROR - 'StageToRedshiftOperator' object has no attribute 'aws_credentials'
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.6/site-packages/airflow/models.py", line 1657, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/home/workspace/airflow/plugins/operators/stage_redshift.py", line 37, in execute
+    aws_hook=AwsHook(self.aws_credentials)
+
+
+
+[2021-11-04 20:25:25,823] {models.py:1593} INFO - Executing <Task(StageToRedshiftOperator): Stage_events> on 2019-01-13T01:00:00+00:00
+[2021-11-04 20:25:25,824] {base_task_runner.py:118} INFO - Running: ['bash', '-c', 'airflow run udac_example_dag Stage_events 2019-01-13T01:00:00+00:00 --job_id 83 --raw -sd DAGS_FOLDER/udac_example_dag.py --cfg_path /tmp/tmpg1qx15_t']
+[2021-11-04 20:25:33,697] {base_task_runner.py:101} INFO - Job 83: Subtask Stage_events [2021-11-04 20:25:33,697] {settings.py:174} INFO - settings.configure_orm(): Using pool settings. pool_size=5, pool_recycle=1800, pid=4429
+[2021-11-04 20:25:42,547] {base_task_runner.py:101} INFO - Job 83: Subtask Stage_events [2021-11-04 20:25:42,547] {__init__.py:51} INFO - Using executor LocalExecutor
+[2021-11-04 20:25:47,061] {base_task_runner.py:101} INFO - Job 83: Subtask Stage_events [2021-11-04 20:25:47,000] {models.py:273} INFO - Filling up the DagBag from /home/workspace/airflow/dags/udac_example_dag.py
+[2021-11-04 20:25:47,531] {base_task_runner.py:101} INFO - Job 83: Subtask Stage_events [2021-11-04 20:25:47,531] {cli.py:520} INFO - Running <TaskInstance: udac_example_dag.Stage_events 2019-01-13T01:00:00+00:00 [running]> on host e2da55b55578
+[2021-11-04 20:25:48,037] {stage_redshift.py:36} INFO - StageToRedshiftOperator not implemented yet
+[2021-11-04 20:25:48,037] {models.py:1788} ERROR - 'StageToRedshiftOperator' object has no attribute 'aws_credentials'
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.6/site-packages/airflow/models.py", line 1657, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/home/workspace/airflow/plugins/operators/stage_redshift.py", line 37, in execute
+    aws_hook=AwsHook(self.aws_credentials)
+AttributeError: 'StageToRedshiftOperator' object has no attribute 'aws_credentials'
